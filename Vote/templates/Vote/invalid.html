@@ -1,0 +1,71 @@
+<!--------------- Extending NavBar Layout ----------------->
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}Invalid{% endblock %}
+{% block content %}
+<!--------------------------------------------------------->
+    <style>
+        img{
+          border-radius:50%;
+          -webkit-transition: all 0.3s ease-in-out;
+          -moz-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+        }
+        img:hover{
+          -webkit-box-shadow: 1px 1px 21px 0px rgba(0, 3, 0, 0.91);
+          -moz-box-shadow:    1px 1px 21px 0px rgba(0, 3, 0, 0.91);
+          box-shadow:         1px 1px 21px 0px rgba(0, 3, 0, 0.91);
+          border:2px solid #fff;
+        }
+    </style>
+
+    <div class="page-header bg-2">
+        <br>
+        <h1 align="center" ><strong>Smart Voting System </strong></h1>
+        <h3 align="center">A fast and efficient way to vote sitting at home.</h3>
+        <br>
+    </div>
+
+    <div class="row bg-10">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-4" class="slideanim" class="well"><img src="{% static 'Vote/bitmoji-20190722104244.png' %}" class="img-thumbnail" ></div>
+        <div class="col-lg-6">
+            <br><br>
+            <br><br>
+            <h1 align="center"><strong>Invalid Credentials</strong></h1>
+            <h2 align="center"><strong> Please stop embarrassing yourself and use your own credentials.</strong></h2>
+            <h1 align="center"><strong> Forgot Password??</strong></h1>
+            <h1 align="center"><strong> Contact your Admin below..</strong></h1>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-4">
+        <h2 class="text-center">Get In Touch</h2>
+        <br>
+        <div class="row row2">
+            <div class="col-sm-5">
+                <p><strong>Contact Us</strong> and we'll get back to you within 24 hours.</p>
+                <p><span class="glyphicon glyphicon-map-marker"></span> Birmingham City University, England</p>
+                <p><span class="glyphicon glyphicon-phone"></span> +44-7859108563</p>
+                <p><span class="glyphicon glyphicon-envelope"></span> mohsinziaofficial@gmail.com</p>
+            </div>
+            <div class="col-sm-7">
+                <div class="row row2">
+                    <div class="col-sm-6 form-group">
+                        <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+                    </div>
+                    <div class="col-sm-6 form-group">
+                        <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+                    </div>
+                </div>
+                <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+                <div class="row row2">
+                    <div class="col-sm-12 form-group">
+                        <button class="btn btn-default pull-right" type="submit">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

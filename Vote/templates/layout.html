@@ -1,0 +1,230 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, iniital-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!-- Page Icon -->
+        <link rel="shortcut icon" href="{% static 'Vote/ico_logo.ico' %}" type="image/x-icon">
+
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="{% static 'jquery.min.js' %}"></script>
+        <link href="https://fonts.googleapis.com/css?family=Muli:400,600" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" />
+
+        <!--    custom style sheets for every page    -->
+        <link rel="stylesheet" type="text/css" href="{% static 'Vote/home.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'Vote/credits.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'Vote/login.css' %}">
+
+
+        <style>
+         .navbar-brand {
+             float: none;
+         }
+
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* Full-width input fields */
+.login_form_input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+.login_form_button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.login_form_button:hover {
+  opacity: 0.8;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 20%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.login_form_modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.login_form_modal_content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.login_form_close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.login_form_close:hover,
+.login_form_close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+}
+</style>
+
+
+<div id="id01" class="login_form_modal">
+
+  <form class="login_form_modal_content animate" method="post" action="/Vote/login/">{% csrf_token %}
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="login_form_close" title="Close Modal">&times;</span>
+      <img src="{% static 'img/logo_main.png' %}" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container" align="left">
+      <label for="username"><b>Username</b></label>
+      <input class="login_form_input" type="text" placeholder="Enter Username" name="username" required>
+
+      <label for="password"><b>Password</b></label>
+      <input class="login_form_input" type="password" placeholder="Enter Password" name="password" required>
+
+        <a href="{% url 'Vote:vote' %}"><button class="login_form_button" type="submit">Login</button></a>
+    </div>
+
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+
+    </head>
+
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class=" navbar-header">
+                    <img src="{% static 'Vote/logo_main.png' %}" width=50 height=50 style="margin-left:4em;">
+                    <a class="navbar-brand {% if nbar == 'vote' %}active{% endif %}" href="{% url 'Vote:home' %}">Smart Voting System</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="{% if nbar == 'home' %}active{% endif %}"><a href="{% url 'Vote:home' %}">Home</a></li>
+                    {% if user.is_authenticated %}
+                        <li class="{% if nbar == 'vote' %}active{% endif %}"><a href="{% url 'Vote:vote' %}">Cast Vote</a></li>
+						<li class="{% if nbar == 'face_index' %}active{% endif %}"><a href="{% url 'Vote:face_index' %}">Add Facedata</a></li>
+                        <li class="{% if nbar == 'details' %}active{% endif %}"><a href ="{% url 'Vote:details' %}">Profile</a></li>
+					{% endif %}
+                    <li class="{% if nbar == 'results' %}active{% endif %}"><a href="{% url 'Vote:results' %}">Results</a> </li>
+                    <li class="{% if nbar == 'about' %}active{% endif %}"><a href ="{% url 'Vote:about' %}">About</a></li>
+                    <li><a href="/admin">Admin</a></li>
+                </ul>
+
+                {% if user.is_authenticated %}
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="{% url 'Vote:logout' %}"><span class="glyphicon glyphicon-log-in"></span> Log Out</a></li>
+                    </ul>
+
+                {% else %}
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a onclick="document.getElementById('id01').style.display='block'" style="cursor: pointer;width:auto;"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
+                    </ul>
+
+                {% endif %}
+            </div>
+        </nav>
+
+        {% block content %}
+        {% endblock %}
+        <footer style="background-color: rgb(28, 28, 28);padding:2em 0;position:relative;bottom:0px;width:100%">
+          <p class="text-center" style="margin-bottom:0;color:#fff">&copy; Copyright <strong>Muhammad Mohsin Zia</strong>. All Rights Reserved</p>
+        </footer>
+        <!-- Custom scripts for this template -->
+        <script src="{% static 'bootstrap/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/particles.min.js' %}" ></script>
+        <script src="{% static 'script.js' %}"></script>
+
+    </body>
+</html>

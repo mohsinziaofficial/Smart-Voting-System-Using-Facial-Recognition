@@ -1,0 +1,41 @@
+<!--------------- Extending NavBar Layout ----------------->
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}Casted{% endblock %}
+{% block content %}
+<!--------------------------------------------------------->
+    <style>
+        img{
+          border-radius:50%;
+          -webkit-transition: all 0.3s ease-in-out;
+          -moz-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+        }
+        img:hover{
+          -webkit-box-shadow: 1px 1px 21px 0px rgba(0, 3, 0, 0.91);
+          -moz-box-shadow:    1px 1px 21px 0px rgba(0, 3, 0, 0.91);
+          box-shadow:         1px 1px 21px 0px rgba(0, 3, 0, 0.91);
+          border:2px solid #fff;
+        }
+    </style>
+
+    <div class="page-header bg-2">
+        <br>
+        <h1 align="center" ><strong>Smart Voting System </strong></h1>
+        <h3 align="center">A fast and efficient way to vote sitting at home.</h3>
+        <br>
+    </div>
+
+    <!---- row ---->
+    <div class="row bg-10">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-4" class="slideanim" class="well"><img src="{% static 'Vote/bitmoji-20190722110909.png' %}" class="img-thumbnail" ></div>
+        <div class="col-lg-6">
+            <br><br>
+            <br><br>
+            <h1 align="center"><strong>Your vote is saved.</strong></h1>
+            <h1 align="center"><strong> You can see the live vote count in the Results section.</strong></h1>
+        </div>
+    </div>
+
+{% endblock %}

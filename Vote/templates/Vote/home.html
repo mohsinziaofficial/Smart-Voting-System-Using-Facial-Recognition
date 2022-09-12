@@ -1,0 +1,86 @@
+<!--------------- Extending NavBar Layout ----------------->
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<!--------------------------------------------------------->
+    <style>
+        img{
+          border-radius:50%;
+          -webkit-transition: all 0.3s ease-in-out;
+          -moz-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+        }
+        img:hover{
+          -webkit-box-shadow: 1px 1px 21px 0px rgba(0, 3, 0, 0.91);
+          -moz-box-shadow:    1px 1px 21px 0px rgba(0, 3, 0, 0.91);
+          box-shadow:         1px 1px 21px 0px rgba(0, 3, 0, 0.91);
+          border:2px solid #fff;
+        }
+    </style>
+
+    <div class="page-header bg-6">
+       <h1 align="center" ><strong>Smart Voting System </strong></h1>
+       <h3 align="center">A fast and efficient way to vote sitting at home.</h3>
+    </div>
+
+    <!---- row ---->
+    <div class="row">
+       <div class="col-lg-4" class="slideanim"><img src="{% static 'Vote/smart-voting-system.jpg' %}" class="img-thumbnail" ></div>
+       <div class="col-lg-8">
+           <h4 align="justify">
+               <strong>Smart voting System</strong> uses Facial Recognition alongside traditional passwords which provides an additional security. This Web App is designed to serve the needs of organisation and institutions.
+               <br>
+               <br>
+               <strong>Smart Voting System </strong> does not limit the number of polls you can create. Unlike the vast majority of voting websites you can continue using the free service as often as you’d like. It’s a quick and easy way to organise elections for an organisation or an institution and let your colleagues or CR's cast their vote.
+               <br><br>
+               <strong>Contact the Admin </strong> to get your Login Credentials. Once you get the Login Credentials you can add your Face Data and you are ready to vote.
+           </h4>
+       </div>
+    </div>
+
+    <!---- row ---->
+    <div class="row bg-5" >
+        <div class="col-lg-8" class="slideanim">
+            <h2 style="color:black;">
+                <strong>What makes this web app so special?</strong>
+            </h2>
+            <h4 align="justify" style="color:black;">
+                <strong>Smart Voting System</strong> has a very minimalistic, user-friendly design.<br>There’s no hassle, no fuss, and no lengthy steps asking you to fill out information. In fact, you don’t even have to sign up for an account just get your login credentials from the admin of your organisation. This voting website does not need your mobile number, does not save your email address for sending newsletters and would never sell your contact information to third party advertisers!!
+            </h4>
+        </div>
+        <div class="col-lg-4"><img src="{% static 'Vote/e_vote.jpg' %}" class="img-thumbnail" ></div>
+    </div>
+
+
+    <script>
+    $(document).ready(function(){
+        $('[data-toggle="popover"]').popover();
+    });
+    </script>
+
+    <div class="container-fluid bg-4">
+        <h2 class="text-center">Get In Touch</h2>
+        </br>
+        <div class="row row2">
+            <div class="col-sm-5">
+                <p><strong>Contact Us</strong> and we'll get back to you within 24 hours.</p>
+                <p><span class="glyphicon glyphicon-map-marker"></span> Birmingham City University, England</p>
+                <p><span class="glyphicon glyphicon-phone"></span> +44-7859108563</p>
+                <p><span class="glyphicon glyphicon-envelope"></span> mohsinziaofficial@gmail.com</p>
+            </div>
+            <div class="col-sm-7">
+                <div class="row row2">
+                    <div class="col-sm-6 form-group"><input class="form-control" id="name" name="name" placeholder="Name" type="text" required></div>
+                    <div class="col-sm-6 form-group"><input class="form-control" id="email" name="email" placeholder="Email" type="email" required></div>
+                </div>
+                <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
+                <br>
+                <div class="row row2">
+                    <div class="col-sm-12 form-group"><button class="btn btn-default pull-right" type="submit">Send</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

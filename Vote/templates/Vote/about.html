@@ -1,0 +1,49 @@
+<!--------------- Extending NavBar Layout ----------------->
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}About{% endblock %}
+{% block content %}
+<!--------------------------------------------------------->
+    <style>
+        img{
+          border-radius:50%;
+          -webkit-transition: all 0.3s ease-in-out;
+          -moz-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+        }
+        img:hover{
+          -webkit-box-shadow: 1px 1px 21px 0px rgba(0, 3, 0, 0.91);
+          -moz-box-shadow:    1px 1px 21px 0px rgba(0, 3, 0, 0.91);
+          box-shadow:         1px 1px 21px 0px rgba(0, 3, 0, 0.91);
+          border:2px solid #fff;
+        }
+    </style>
+    <div style="margin-top:5%;padding-left:5%; padding-right:5%;">
+        <h1 align="left"><strong>Smart Voting System </strong></h1>
+        <h3 align="justify">Such huge democratic countries like India and Pakistan, where the president is elected by the people, rely heavily on elections as a means of political accountability. By providing people with the choice of choosing a government, elections maintain the integrity of a state. Therefore, the election should be a fair and unbiased process. The right to vote for one's own choice is guaranteed to every citizen of a democratic country. As a conventional democratic framework, there are a number of issues that require a great deal of labour and resources. Some people are concerned as well about the publication of illegal messages in connection with this manner of election or its preparation. We use conventional election voting procedures in our country even though it has some disadvantages including machine stops working, violence, time and resources consuming, spot voting, etc. Thousands of people failed to vote because they could not reach the polling stations where they could vote, or because they lived far away from their original birthplace where they were allowed to vote. Therefore, a new system is introduced in order to overcome their limitations, which is called Smart Voting System. This new system provides many benefits including accuracy, security, flexibility, mobility, etc.</h3>
+    </div>
+
+   <!---- row ---->
+   <div class="row bg-10" style="margin-top:4%; margin-bottom:4%;padding-left:5%; padding-right:5%">
+       <div class="col-lg-1"></div>
+       <div class="col-lg-4">
+           <img src="{% static 'Vote/developer.png' %}">
+       </div>
+       <div class="col-lg-6" style="text-align:left;">
+           <h2><strong>Designed and Developed by:</strong></h2>
+           <h3><br><strong>Muhammad Mohsin Zia</strong></h3>
+           <h4><strong>Bachelor in Software Engineering</strong></h4>
+           <h5><strong>(COMSATS University Islamabad, Pakistan)</strong></h5>
+           <h4><strong>Master in Artificial Intelligence</strong></h4>
+           <h5><strong>(Birmingham City University, England)</strong></h5>
+           <h4><strong>Follow me on:</strong></h4>
+           <h3>
+               <a style="text-decoration: none;" href="https://github.com/mohsinziaofficial" class="fa fa-github" target="_blank"></a>
+               <a style="text-decoration: none;" href="https://facebook.com/mohsinziaofficial" class="fa fa-facebook" target="_blank"></a>
+               <a style="text-decoration: none;" href="https://linkedin.com/in/mohsinziaofficial/" class="fa fa-linkedin" target="_blank"></a>
+               <a style="text-decoration: none;" href="https://instagram.com/mohsinziaofficial/" class="fa fa-instagram" target="_blank"></a>
+           </h3>
+       </div>
+   </div>
+
+{% endblock %}

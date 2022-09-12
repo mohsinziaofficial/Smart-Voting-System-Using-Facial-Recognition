@@ -1,0 +1,67 @@
+<!--------------- Extending NavBar Layout ----------------->
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}Results{% endblock %}
+{% block content %}
+<!--------------------------------------------------------->
+    <style>
+        img{
+          border-radius:50%;
+          -webkit-transition: all 0.3s ease-in-out;
+          -moz-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+        }
+        img:hover{
+          -webkit-box-shadow: 1px 1px 21px 0px rgba(0, 3, 0, 0.91);
+          -moz-box-shadow:    1px 1px 21px 0px rgba(0, 3, 0, 0.91);
+          box-shadow:         1px 1px 21px 0px rgba(0, 3, 0, 0.91);
+          border:2px solid #fff;
+        }
+    </style>
+
+    <h1 align="center">Election Results</h1>
+
+    <div class="row row-5 bg-10">
+        {% for pos in candidates %}
+            <div class="container-fluid  bg-4 text-center">
+                <h2>{{pos.0.1.position}}</h2>
+                <h4 align='justify'>{{pos.0.1.about}}</h4>
+            </div>
+
+            {% for candidate in pos %}
+                 <div class="row">
+                     <div class="col-lg-2"><img src="{{MEDIA_URL}}{{candidate.0.image.url}}" class="img-thumbnail" ></div>
+
+                     <div class="col-lg-4" align="left">
+                         <h3><strong>{{candidate.0.Description}}</strong></h3>
+                         <h4><strong>{{candidate.0.name}}</strong></h4>
+                         <h5><strong>Total Votes : {{candidate.0.votes}}</strong></h5>
+
+
+<!--                         <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">{{candidate.0.name}}</button>-->
+
+<!--                         <div id="myModal" class="modal fade" role="dialog">-->
+<!--                             <div class="modal-dialog">-->
+<!--                                 <div class="modal-content">-->
+<!--                                     <div class="modal-header">-->
+<!--                                         <button type="button" class="close" data-dismiss="modal">&times;</button>-->
+<!--                                         <h4 class="modal-title">Past Experiences</h4>-->
+<!--                                     </div>-->
+<!--                                     <div class="modal-body">-->
+<!--                                         {{candidate.0.Description}}-->
+<!--                                     </div>-->
+<!--                                     <div class="modal-footer">-->
+<!--                                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+<!--                                     </div>-->
+<!--                                 </div>-->
+<!--                             </div>-->
+<!--                         </div>-->
+
+<!--                         Total Votes : {{candidate.0.votes}}-->
+
+                     </div>
+                 </div>
+            {% endfor %}
+        {% endfor %}
+    </div>
+{% endblock %}

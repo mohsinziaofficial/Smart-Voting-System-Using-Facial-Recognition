@@ -1,0 +1,52 @@
+<!--&lt;!&ndash;-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; Extending NavBar Layout -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;-->
+<!--{% extends 'layout.html' %}-->
+<!--{% load static %}-->
+<!--{% block title %}Login{% endblock %}-->
+<!--{% block content %}-->
+<!--&lt;!&ndash;-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;-->
+<!--    <style>-->
+<!--        img{-->
+<!--          border-radius:50%;-->
+<!--          -webkit-transition: all 0.3s ease-in-out;-->
+<!--          -moz-transition: all 0.3s ease-in-out;-->
+<!--          transition: all 0.3s ease-in-out;-->
+<!--        }-->
+<!--        img:hover{-->
+<!--          -webkit-box-shadow: 1px 1px 21px 0px rgba(0, 3, 0, 0.91);-->
+<!--          -moz-box-shadow:    1px 1px 21px 0px rgba(0, 3, 0, 0.91);-->
+<!--          box-shadow:         1px 1px 21px 0px rgba(0, 3, 0, 0.91);-->
+<!--          border:2px solid #fff;-->
+<!--        }-->
+<!--        .center {-->
+<!--          margin: auto;-->
+<!--          width: 60%;-->
+<!--          border: 3px solid #73AD21;-->
+<!--        }-->
+<!--    </style>-->
+
+
+
+
+<!--    <div class="center">-->
+
+<!--        <div class="row">-->
+<!--            <div align="center">-->
+<!--                <div class="form_l1" align="center">LOGIN FORM</div>-->
+<!--                <div class="form_div" align="center">-->
+<!--                    <p class="form_label1">Enter your Login Credentials:</p>-->
+<!--                    <form method="post" action="Vote/login/">{% csrf_token %}-->
+<!--                        <b>Username:</b> <input type="text" name="username" placeholder="Enter Username" value=""/>-->
+<!--                        <b>Password:</b> <input type="password" name="password" placeholder="Enter Password" value=""/>-->
+<!--                        <br>-->
+<!--                        <br>-->
+<!--                        <a href="{% url 'Vote:vote' %}"> <input type="submit" name="submit" /></a>-->
+<!--                    </form>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+
+
+
+<!--{% endblock %}-->
